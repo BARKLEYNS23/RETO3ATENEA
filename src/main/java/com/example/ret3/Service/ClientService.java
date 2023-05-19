@@ -35,7 +35,7 @@ public class ClientService {
     }
 
     public Client update(Client client){
-        if(client.getIdClient() !=null){
+        if(client.getIdClient()!=null){
             Optional<Client>clientEncontrado = getClient(client.getIdClient());
             if(clientEncontrado.isPresent()){
                 if(client.getEmail()!=null){

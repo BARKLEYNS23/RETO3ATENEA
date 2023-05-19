@@ -35,7 +35,7 @@ public class GamaService {
     }
 
     public Gama update(Gama gama){
-        if(gama.getIdGama() !=null){
+        if(gama.getIdGama()!=null){
             Optional<Gama>gamaEncontrado = getGama(gama.getIdGama());
             if(gamaEncontrado.isPresent()){
                 if(gama.getDescription()!=null){

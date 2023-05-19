@@ -35,7 +35,7 @@ public class CarService {
     }
 
     public Car update(Car car){
-      if(car.getIdCar() !=null){
+      if(car.getIdCar()!=null){
           Optional<Car>carEncontrado = getCar(car.getIdCar());
           if(carEncontrado.isPresent()){
               if(car.getBrand()!=null){

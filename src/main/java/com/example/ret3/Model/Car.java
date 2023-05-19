@@ -27,7 +27,7 @@ public class Car {
     private Gama gama;
 
     //Mensajes
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "car")
     @JsonIgnoreProperties({"car", "client"})
     private List<Message> messages;
 

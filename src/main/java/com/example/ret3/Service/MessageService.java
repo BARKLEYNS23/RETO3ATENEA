@@ -35,12 +35,13 @@ public class MessageService {
     }
 
     public Message update(Message message){
-        if(message.getIdMessage() !=null){
+        if(message.getIdMessage()!=null){
             Optional<Message>messageEncontrado = getMessage(message.getIdMessage());
             if(messageEncontrado.isPresent()){
                 if(message.getMessageText()!=null){
                     messageEncontrado.get().setMessageText(message.getMessageText());
                 }
+
                 return messageRepository.save(messageEncontrado.get());
             }else{
                 return message;
@@ -48,12 +49,11 @@ public class MessageService {
         }else{
             return message;
         }
-
     }
 
     public boolean deleteMessage(int id){
-        Boolean respuesta = getMessage(id).map(Message -> {
-            messageRepository.delete(Message);
+        Boolean respuesta = getMessage(id).map(message -> {
+            messageRepository.delete(message);
             return true;
         }).orElse( false);
 

@@ -35,8 +35,8 @@ public class ReservationService {
     }
 
     public Reservation update(Reservation reservation){
-        if(reservation.getIdReservation() !=null){
-            Optional<Reservation> reservationEncontrado = getReservation(reservation.getIdReservation());
+        if(reservation.getIdReservation()!=null){
+            Optional<Reservation>reservationEncontrado = getReservation(reservation.getIdReservation());
             if(reservationEncontrado.isPresent()){
                 if(reservation.getStartDate()!=null){
                     reservationEncontrado.get().setStartDate(reservation.getStartDate());
@@ -44,9 +44,10 @@ public class ReservationService {
                 if(reservation.getDevolutionDate()!=null){
                     reservationEncontrado.get().setDevolutionDate(reservation.getDevolutionDate());
                 }
-                if(reservation.getStatus()!=null){
+                if(reservation.getStatus()!=null) {
                     reservationEncontrado.get().setStatus(reservation.getStatus());
                 }
+
                 return reservationRepository.save(reservationEncontrado.get());
             }else{
                 return reservation;
@@ -54,12 +55,11 @@ public class ReservationService {
         }else{
             return reservation;
         }
-
     }
 
     public boolean deleteReservation(int id){
-        Boolean respuesta = getReservation(id).map(Reservation -> {
-            reservationRepository.delete(Reservation);
+        Boolean respuesta = getReservation(id).map(reservation -> {
+            reservationRepository.delete(reservation);
             return true;
         }).orElse( false);
 

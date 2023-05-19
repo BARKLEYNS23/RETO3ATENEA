@@ -35,7 +35,7 @@ public class ScoreService {
     }
 
     public Score update(Score score){
-        if(score.getIdScore() !=null){
+        if(score.getIdScore()!=null){
             Optional<Score>scoreEncontrado = getScore(score.getIdScore());
             if(scoreEncontrado.isPresent()){
                 if(score.getMessageText()!=null){
