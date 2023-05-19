@@ -1,6 +1,6 @@
-package Controller;
+package com.example.ret3.Controller;
 
-import Service.ScoreService;
+import com.example.ret3.Service.ScoreService;
 import com.example.ret3.Model.Score;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

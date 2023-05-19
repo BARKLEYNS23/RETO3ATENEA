@@ -1,6 +1,6 @@
-package Controller;
+package com.example.ret3.Controller;
 
-import Service.ReservationService;
+import com.example.ret3.Service.ReservationService;
 import com.example.ret3.Model.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

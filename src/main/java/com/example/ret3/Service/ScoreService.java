@@ -1,4 +1,4 @@
-package Service;
+package com.example.ret3.Service;
 
 import com.example.ret3.Model.Score;
 import com.example.ret3.Repository.ScoreRepository;

@@ -1,6 +1,6 @@
-package Controller;
+package com.example.ret3.Controller;
 
-import Service.ClientService;
+import com.example.ret3.Service.ClientService;
 import com.example.ret3.Model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

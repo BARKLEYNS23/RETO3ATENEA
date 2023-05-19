@@ -1,4 +1,4 @@
-package Service;
+package com.example.ret3.Service;
 
 import com.example.ret3.Model.Reservation;
 import com.example.ret3.Repository.ReservationRepository;
