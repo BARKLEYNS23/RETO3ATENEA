@@ -33,10 +33,9 @@ public class CarService {
             }
         }
     }
-
     public Car update(Car car){
       if(car.getIdCar()!=null){
-          Optional<Car>carEncontrado = getCar(car.getIdCar());
+          Optional<Car> carEncontrado = getCar(car.getIdCar());
           if(carEncontrado.isPresent()){
               if(car.getBrand()!=null){
                   carEncontrado.get().setBrand(car.getBrand());
@@ -63,7 +62,7 @@ public class CarService {
 
     }
 
-    public boolean deleteCar(int id){
+    public boolean delete(int id){
         Boolean respuesta = getCar(id).map(car -> {
             carRepository.delete(car);
             return true;
@@ -71,5 +70,4 @@ public class CarService {
 
         return respuesta;
     }
-
 }
