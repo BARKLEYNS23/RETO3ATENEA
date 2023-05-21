@@ -5,6 +5,8 @@ import com.example.ret3.Repository.CRUD.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +25,18 @@ public class ReservationRepository {
     public Reservation save(Reservation reservation){
         return reservationCrudRepository.save(reservation);
     }
-
     public void delete(Reservation reservation){
         reservationCrudRepository.delete(reservation);
     }
+    //Reto 5
+    public List<Reservation> getReservationsBetweenDates(Date fechaA, Date fechaB){
+        return reservationCrudRepository.findAllByStartDateAfterAndDevolutionDateBefore(fechaA, fechaB);
+    }
+    public List<Reservation> getReservationsByStatus(String status){
+        return reservationCrudRepository.findAllByStatus(status);
+    }
+    public List<Object[]> getTotalReservationsByClient(){
+        return reservationCrudRepository.getTotalReservationsByClient();
+    }
+
 }
